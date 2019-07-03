@@ -1,0 +1,109 @@
+﻿@model project.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<div class="col-lg-12">
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <table class="col-lg-4 table table-bordered table-hover  glyphicon-align-justify " style="text-align:center">
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.category.CategoryName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.category.CategoryName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.ProductColor.Color)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.ProductColor.Color)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.ProductSize.Size)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.ProductSize.Size)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.ProductName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.PriceBeforeDiscount)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.PriceBeforeDiscount)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.PriceAfterDiscount)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.PriceAfterDiscount)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Discount)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.Discount)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.QuantityInStock)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.QuantityInStock)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Picture)
+                </td>
+
+                <td>
+                    <img src="~/Content/img/@Model.Picture" width="100px" height="auto" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.ProductDiscription)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.ProductDiscription)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

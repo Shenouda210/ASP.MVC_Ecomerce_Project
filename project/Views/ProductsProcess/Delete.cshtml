@@ -1,0 +1,105 @@
+﻿@model project.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductColor.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductColor.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductSize.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductSize.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceBeforeDiscount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceBeforeDiscount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceAfterDiscount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceAfterDiscount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityInStock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityInStock)
+        </dd>
+
+      
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDiscription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDiscription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

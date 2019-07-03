@@ -1,0 +1,80 @@
+﻿@model IEnumerable<project.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Application Users</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div class="col-lg-12">
+    <table class="table table-bordered table-hover  glyphicon-align-justify " style="text-align:center">
+        <tr class="active">
+
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Roles)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+
+                <td>
+                    @foreach (var role in item.Roles)
+                    {
+                        if (int.Parse(role.RoleId) == 1)
+                        {
+                            <span>Admin</span>
+                        }
+                        else if (int.Parse(role.RoleId) == 2)
+                        {
+                            <span>Supplier</span>
+                        }
+                        else
+                        {
+                            <span>Customer</span>
+                        }
+                        @*{
+                            @Html.DisplayFor(modelItem =>role.RoleId )
+                            }*@
+                    }
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Id },new {@class="btn btn-success" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id },new { @class="btn btn-info"}) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                  
+
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

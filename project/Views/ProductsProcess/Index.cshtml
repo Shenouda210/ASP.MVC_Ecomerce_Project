@@ -1,0 +1,93 @@
+﻿@model IEnumerable<project.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="container-fluid">
+<p>
+    @Html.ActionLink("Create New", "Create",null,new { @class= "btn btn-danger" })
+</p>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductColor.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductSize.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceBeforeDiscount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceAfterDiscount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityInStock)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Picture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDiscription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductColor.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductSize.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceBeforeDiscount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceAfterDiscount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Discount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityInStock)
+        </td>
+      
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Picture)*@
+            <img src="~/Content/img/@item.Picture" style="height:auto;width:2cm" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDiscription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+</div>

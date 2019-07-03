@@ -1,0 +1,55 @@
+﻿
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated == false)
+{
+    @*<li>@Html.ActionLink("Categories", "Index", "Categories")</li>
+    <li>@Html.ActionLink("Role", "Index", "Role")</li>*@
+    <ul class="main-nav nav navbar-nav">
+        <li><a  href="/Home/Index">Home</a></li>
+        <li><a href="/DisplayCategories/AllCategories">AllCategories</a></li>
+
+        <li><a href="/DisplayCategories/Labtop">Laptops</a></li>
+        <li><a href="/DisplayCategories/Smartphones">Smartphones</a></li>
+        <li><a href="/DisplayCategories/Cameras">Cameras</a></li>
+        <li><a href="/DisplayCategories/Accessories">Accessories</a></li>
+ 
+      
+        @*<li><a href="/DisplayCategories/AllCategories">AllCategories</a></li>
+
+        <li><a href="/DisplayCategories/Labtop">Laptops</a></li>
+        <li><a href="/DisplayCategories/Smartphones">Smartphones</a></li>
+        <li><a href="/DisplayCategories/Cameras">Cameras</a></li>
+        <li><a href="/DisplayCategories/Accessories">Accessories</a></li>*@
+    </ul>
+}
+  else
+{
+    @Html.AntiForgeryToken()
+    <ul class="main-nav nav navbar-nav">
+        @if(User.IsInRole("Admin"))
+        {
+
+
+
+        <li><a href="/CategoriesProcess/Index">CategoriesProcess</a></li>
+        <li><a href="/ProductColors/Index">ProductColors</a></li>
+        <li><a href="/ProductSizes/Index">ProductSizes</a></li>
+        <li><a href="/ProductsProcess/Index">ProductProcess</a></li>
+        <li><a href="/ApplicationUsers/Index"> ApplicationUsers</a></li>
+
+
+
+        }
+
+
+        <li><a href="/Home/Index">Home</a></li>
+
+        <li><a href="/DisplayCategories/AllCategories">AllCategories</a></li>
+        <li><a href="/DisplayCategories/Labtop">Laptops</a></li>
+        <li><a href="/DisplayCategories/Smartphones">Smartphones</a></li>
+        <li><a href="/DisplayCategories/Cameras">Cameras</a></li>
+        <li><a href="/DisplayCategories/Accessories">Accessories</a></li>
+    </ul>
+
+
+}

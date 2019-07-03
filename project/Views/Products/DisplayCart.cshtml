@@ -1,0 +1,34 @@
+﻿@model List<project.Models.VMCART>
+    @{
+        ViewBag.Title = "DisplayCart";
+    }
+
+    <h2>DisplayCart</h2>
+    <!-- product -->
+@if (Model != null)
+{
+foreach (var item in Model)
+{
+
+
+    <div class="col-md-4 col-xs-6">
+        <div class="product">
+            <div class="product-img">
+                <img src="~/Content/img/@item.prod.Picture" alt="">
+                <div class="product-label">
+                    <span class="qty">quantity: @item.Quantity</span>
+                </div>
+            </div>
+            <div class="product-body">
+                <p class="product-category">@item.prod.category.CategoryName</p>
+                <h3 class="product-name"><a href="/Products/displayProduct/@item.prod.ID">@item.prod.ProductName</a></h3>
+                <h4 class="product-price">$@item.prod.PriceAfterDiscount <del class="product-old-price">$@item.prod.PriceBeforeDiscount</del></h4>
+               <div class="product-btns">
+                   <a href="/Order/checkout" class="btn btn-danger form-control" >Checkout  <i class="fas fa-arrow-circle-right "></i></a>
+            </div>
+        </div>
+    </div>
+        </div>
+}
+}
+    <!-- /product -->
